@@ -25,6 +25,7 @@ bool solve(string p){
             }
         }
     }
+    if (b.size()) return false; //if the stack is not empty, then the string is not balanaced
     return true;
 }
 int main(){
