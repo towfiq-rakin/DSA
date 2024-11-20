@@ -1,5 +1,6 @@
 # Data Structures and Algorithms (DSA)
-Bangladesh University of Professionals (BUP)
+
+Dept. of CSE, Bangladesh University of Professionals (BUP)
 
 ## Overview
 Welcome to my repository for the Data Structures and Algorithms (DSA) course. Here, I will be uploading my own implementations of various data structures and algorithms as part of our DSA/DSA Lab Course.
