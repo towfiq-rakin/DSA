@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 #define endl "\n"
-template <typename T>
 
+template <typename T>
 class stack{
     struct Node{
         T data;
