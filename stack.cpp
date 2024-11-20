@@ -64,6 +64,18 @@ class stack{
         if(empty()) throw "Stack is empty";
         return count;
     }
+
+    // Delete all the elements of the stack
+    void clear(){
+        Node* temp = head;
+        while(temp != nullptr){
+            Node* temp1 = temp;
+            temp = temp->next;
+            delete temp1;
+        }
+        head = nullptr;
+        count = 0;
+    }
 };
 
 int main(){
