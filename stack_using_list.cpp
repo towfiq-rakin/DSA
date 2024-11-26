@@ -1,3 +1,4 @@
+// This Stack is implented with the help of linked list
 #include <iostream>
 using namespace std;
 #define endl "\n"
