@@ -26,6 +26,7 @@ class stack
         return (top == maxsize); // Return true if the stack is full
     }
 
+    // Push element at the top of the stack
     void push(T element){
         if(full()){
             cout<<"Stack is full"<<endl;
@@ -34,7 +35,6 @@ class stack
         // Insert the element at the top of the stac
         mystack[top++] = element; 
     }
-    
     void pop(){
         if(empty()){
             cout<<"Stack is empty"<<endl;
