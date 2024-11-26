@@ -1,4 +1,5 @@
 #include<iostream>
+#include <vector>
 using namespace std;
 #define endl "\n"
 
@@ -8,7 +9,7 @@ class list{
         T data;
         Node* next;
     };
-    Node* head;
+    Node* head; // head of the list
     int count; // size of the list
 
     public:
@@ -33,27 +34,27 @@ class list{
         ++count;
     }
 
-    // Insert the element at the given position
-    void insert(T data, int pos){
-        Node* newnode = new Node;
-        newnode->data = data;
-        if(pos == 0){
-            newnode->next = head;
-            head = newnode;
-            ++count;
+    // Insert the element after a desired node
+    // data is the node after which the element is to be inserted
+    void insert(T data, T num){
+        if(empty()){
+            cout<<"List is empty"<<endl;
             return;
         }
-        Node* temp = head;
-        pos--;
-        while(pos--){
-            temp = temp->next;
-            if(temp == nullptr){
-                cout<<"Invalid Index"<<endl;
+        Node* newnode = new Node;
+        newnode->data = num;
+        newnode->next = nullptr;
+        Node* prev = head;
+
+        while(prev->data != data){
+            prev = prev->next;
+            if(prev == nullptr){
+                cout<<"Invalid Data"<<endl;
                 return;
             }
         }
-        newnode->next = temp->next;
-        temp->next = newnode;
+        newnode->next = prev->next;
+        prev->next = newnode;
         ++count;
     }
 
@@ -109,21 +110,21 @@ class list{
         --count;
     }
 
-    // delete the element at the given position
-    void erase(int pos){
+    // delete a desired element from the list
+    void erase(T value){
         if(empty()){
             cout<<"List is empty"<<endl;
             return;
         }
         Node* temp = head;
-        if(pos == 0){
+        if(value == temp->data){
             head = head->next;
             delete temp;
             --count;
             return;
         }
-        pos--;
-        while(pos--){
+
+        while(temp->next->data != value){
             temp = temp->next;
             if(temp->next == nullptr){
                 cout <<"Invalid Index"<<endl;
@@ -161,7 +162,6 @@ class list{
     }
 };
 int main(){
-
     list<double> l;
     int n;
     cout << "Enter the size of list: ";
@@ -173,6 +173,9 @@ int main(){
         l.pushback(x);
     }
     cout << "The list is: ";
+    l.print();
+    l.insert(1, 3);
+    cout << "The list after deleting the element: ";
     l.print();
     cout << "The size of the list is: " << l.size() << endl;
 
