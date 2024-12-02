@@ -9,6 +9,7 @@ using namespace std;
 template <typename T>
 class queue
 {
+    //int myqueue[100]
     T myqueue[100]; // array to store the elements of the queue
     int front; // front index of the queue
     int rear; // rear index of the queue
