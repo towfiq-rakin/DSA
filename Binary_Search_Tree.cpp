@@ -109,8 +109,8 @@ private:
                     temp = temp->left;
                 }
                 curr->data = temp->data;
-                deleteHelper(curr->right, temp->data); // Delete the inorder successor
-                // Here Im deleting the inorder successor, Which is the smallest element in the right subtree
+                deleteHelper(curr->right, temp->data); 
+                // Here Im replacing with the inorder successor, Which is the smallest element in the right subtree
             }
         } else if (val < curr->data) {
             deleteHelper(curr->left, val); // Value is smaller, go to the left subtree
